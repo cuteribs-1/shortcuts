@@ -6,4 +6,4 @@
 5. 在右边找到 Name 为 sess 的值 xxxxxxx (长得像随机密码的 base64 字符串)
 6. 是后 sess=xxxxxxx; 就是大妈三连需要用的 cookie 了. (注意结果加上 ; )
 
-[image](https://user-images.githubusercontent.com/1940889/119369054-5042ff00-bce6-11eb-8f50-2e67d8790e9b.png)
+![](https://user-images.githubusercontent.com/1940889/119369054-5042ff00-bce6-11eb-8f50-2e67d8790e9b.png)

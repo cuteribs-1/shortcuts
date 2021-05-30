@@ -1,8 +1,10 @@
 ## 大妈三连
 
 ### 下载地址
-[iOS 版](https://www.icloud.com/shortcuts/ac3845c73c0d46cd8e22b4bacf3922f5)
-[Android 版]()
+
+- [iOS 版](https://www.icloud.com/shortcuts/ac3845c73c0d46cd8e22b4bacf3922f5)
+
+- [Android 版](https://github.com/cuteribs/shortcuts/raw/main/%F0%9F%91%8D%20%E5%A4%A7%E5%A6%88%E4%B8%89%E8%BF%9E.flo)
 
 
 ### 使用方法

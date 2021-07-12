@@ -40,21 +40,37 @@ if (args && args.shortcutParameter) param = JSON.parse(args.shortcutParameter);
 else {
 	return 0;
 	param = {
-		cookie: 'AT-z6lUyhs6%2BZ1XEcGWhu797fbDQpXxIOdP9q9AvelGrWxUKeF3tAJ0sOQy2%2BUnrCgz3EnKaEa%2BjdQYGXNOVlX%2B39SPUYxfYat5giS6tMFaXJluk96B4%2BAgXeYo',
+		autoComments: '',
+		comments: '全是原木色又感觉不好看了...',
+		cookie:
+			'AT-z6lUyhs6%2BZ1XEcGWhu797fbDQpXxIOdP9q9AvelGrWxUKeF3tAJ0sOQy2%2BUnrCgz3EnKaEa%2BjdQYGXNOVlX%2B39SPUYxfYat5giS6tMFaXJluk96B4%2BAgXeYo',
 		url: 'https://post.smzdm.com/p/amxvdomd/',
 		articleId: '83961409',
-		index: 0,
-		comments: '全是原木色又感觉不好看了...',
-		userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-		referer: 'https://post.smzdm.com/'
+		index: 0
 	};
 }
 
-const comments = param.comments.split('\n');
-let comment;
+param = {
+	...param,
+	userAgent:
+		'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+	referer: 'https://post.smzdm.com/'
+};
 
-if (param.index === -1) comment = comments[Math.floor(Math.random() * comments.length)];
-else comment = comments.length > param.index ? comments[param.index] : '';
+let comments, comment, index;
+
+if(param.comments && param.comments.trim().length > 0) {
+	comments = param.comments.trim();
+	index = param.index || 0;
+} else if(param.autoComments && param.autoComments.trim().length > 0) {
+	comments = param.autoComments.trim();
+	index = -1;
+}
+
+comments = param.comments.split('\n');
+
+if (index === -1) comment = comments[Math.floor(Math.random() * comments.length)];
+else comment = comments.length > index ? comments[index] : '';
 
 const headers = {
 	'User-Agent': param.userAgent,
@@ -93,7 +109,6 @@ res = await Helper.sendRequest('https://zhiyou.smzdm.com/user/rating/ajax_add', 
 		rating: 1
 	}
 });
-
 
 // 评论
 if (comment.length >= 5) {
